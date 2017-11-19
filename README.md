@@ -1,4 +1,19 @@
 # git-alias
+
+## Useful Git aliases
+
+### For Mac, Linux or other UNIX OS
+
+For Mac, Linux or other UNIX OS you can just add the code in your `~/.bashrc` или `/etc/bashrc` as is and reopen terminal window.
+In fact, the easiest way to do this is:
+1. run `curl https://raw.githubusercontent.com/studioflag/git-alias/master/.bashrc >> ~/.bashrc`. This should add aliases in .bashrc file in your users folder.
+2. Then run `. ~/.bashrc`. This sources (applies) your .bashrc in current terminal window, so you don't need to reopen.
+
+### Windows
+
+For Windows Cmder app (console emulator based on ConEmu) add entries in `\config\aliases` written like `alias gs=git status $*`. That means you need to remove the quotation marks and add `$*` in the end of every entry.
+For other windows apps and other OS you should just put .bashrc file from this repo somewhere on you machine and tell your app to run it every time it starts.
+
 ## Полезные алиасы для Git
 
 - Для Mac и Linux добавьте записи в `~/.bashrc` или `/etc/bashrc` как есть. Фактически, вы можете просто выполнить `curl https://raw.githubusercontent.com/studioflag/git-alias/master/.bashrc >> ~/.bashrc`, чтобы добавить алиасы в конец вашего .bashrc в папке пользователя.
