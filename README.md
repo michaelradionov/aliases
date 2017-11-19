@@ -9,11 +9,6 @@ In fact, the easiest way to do this is:
 1. run `curl https://raw.githubusercontent.com/studioflag/git-alias/master/.bashrc >> ~/.bashrc`. This should add aliases in .bashrc file in your users folder.
 2. Then run `. ~/.bashrc`. This sources (applies) your .bashrc in current terminal window, so you don't need to reopen.
 
-#### OR
-
-You can just run `curl http://git.flagstudio.ru/alias.sh | bash`. Easy to remember, right?
-
-
 ### Windows
 
 For Windows Cmder app (console emulator based on ConEmu) add entries in `\config\aliases` written like `alias gs=git status $*`. That means you need to remove the quotation marks and add `$*` in the end of every entry.
