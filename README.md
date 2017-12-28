@@ -2,7 +2,7 @@
 
 ## Useful Git aliases
 
-### For Mac, Linux or other UNIX OS
+### Mac OS and Linux
 
 For Mac, Linux or other UNIX OS you can just add the code in your `~/.bashrc` или `/etc/bashrc` as is and reopen terminal window.
 In fact, the easiest way to do this is:
