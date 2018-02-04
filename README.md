@@ -21,4 +21,4 @@ For other windows apps and other OS you should just put .bashrc file from this r
 - Для других программ на Windows и других ОС поместите алиасы в shell файл, который выполняется при запуске терминала (консоли).
 
 # UPD jan-2018
-- For convinience, you can use shorter url `curl -L https://flagstudio.ru/gitalias >> ~/.bashrc`, then again `. ~/.bashrc`.
+- For convinience, you can use shorter url `curl -L https://flagstudio.ru/gitalias >> ~/.bashrc && . ~/.bashrc`.
