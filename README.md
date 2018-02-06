@@ -1,6 +1,4 @@
-# git-alias
-
-## Useful Git aliases
+# Useful Git aliases
 
 
 ### UPD jan-2018
