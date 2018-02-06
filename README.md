@@ -3,7 +3,7 @@
 ## Useful Git aliases
 
 
-# UPD jan-2018
+### UPD jan-2018
 - For convinience, you can use shorter command
 ```
 curl -L https://flagstudio.ru/gitalias >> ~/.bashrc && . ~/.bashrc
