@@ -22,4 +22,6 @@ For other windows apps and other OS you should just put .bashrc file from this r
 
 # UPD jan-2018
 - For convinience, you can use shorter command 
-`curl -L https://flagstudio.ru/gitalias >> ~/.bashrc && . ~/.bashrc`.
+```
+curl -L https://flagstudio.ru/gitalias >> ~/.bashrc && . ~/.bashrc
+```
