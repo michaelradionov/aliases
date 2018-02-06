@@ -9,7 +9,6 @@ alias gd='git diff -w' # ПОЛЕЗНАЯ команда. дифф только 
 alias gm='git merge -Xignore-all-space --no-edit' # мердж, который не создаст конфликтов из-за отступов, пустых строк и тд. НЕ РАБОТАЕТ на git 1.X
 alias gr='git rebase' # ребейз
 alias grh='git reset --hard' # стереть все изменения в WD и индексе. не трогает untracked
-alias gp='git push'
 alias gf='git fetch'
 alias grh1='git reset --hard HEAD~1' # стереть все изменения в WD и индексе + стереть текущий коммит. удобно, когда надо просто стереть последний коммит
 alias gss='git show --stat ' # удобно посмотреть что в коммите. если не передавать ей хеш коммита, покажет что есть в текущем коммите
