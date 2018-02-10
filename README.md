@@ -4,7 +4,7 @@
 ### UPD jan-2018
 For convinience, you can use shorter command
 ```
-curl -L https://flagstudio.ru/gitalias >> ~/.bashrc && . ~/.bashrc
+curl -L https://gogit.ru/gitalias >> ~/.bashrc && . ~/.bashrc
 ```
 
 
