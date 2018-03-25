@@ -14,7 +14,7 @@ If you want to redefine some of this aliases, just add yours lower then `### GGA
 
 # Features
 
-- Only wrapped in `### GGA_START` and `### GGA_END` chunk of youк `.bashrc` updating. It wont broke anything
+- Only wrapped in `### GGA_START` and `### GGA_END` chunk of your `.bashrc` updating. It wont broke anything
 - It always backuping your old `.bashrc`
 - It detects Git version and downgrade to 1.X compatible commands
 - It's just very small and simple to understand
