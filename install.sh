@@ -18,7 +18,7 @@ then
   #   y)
       echo -e "${D_VIOL}Не нашел маркеры Go Git Aliases: '### GGA_START' и '### GGA_END'. Либо блока еще нет, либо сломаны оба маркера. Добавляю новый блок Go Git Алиасов в конец вашего ~/.bashrc...${NC}";
       echo '### GGA_START'>> ~/.bashrc
-      curl -L https://gogit.ru/gitalias >> ~/.bashrc
+      curl -L -s https://gogit.ru/gitalias >> ~/.bashrc
       echo '### GGA_END'>> ~/.bashrc
       . ~/.bashrc
 
@@ -54,7 +54,7 @@ then
       cp ~/.bashrc ~/.bashrc.backup
       echo 'Обновляю список алиасов'
       head -n $BEGIN_LINE ~/.bashrc.backup > ~/.bashrc
-      curl -L https://gogit.ru/gitalias >> ~/.bashrc
+      curl -L -s https://gogit.ru/gitalias >> ~/.bashrc
       tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
       . ~/.bashrc
       echo 'Самоудаляюсь'
