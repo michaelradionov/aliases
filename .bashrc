@@ -1,6 +1,6 @@
 # Git Aliases. Install with:
 #
-# curl -L https://gogit.ru/gitalias >> ~/.bashrc && . ~/.bashrc
+
 #
 
 alias gs='git status'
