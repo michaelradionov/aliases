@@ -1,12 +1,20 @@
-# Go Git алиасы
+# Go Git aliases
 
-Скрипт умеет не только устанавливать, но и обновлять алиасы, если они заключены в `### GGA_START` и `### GGA_END`.
+Bash script to install and update handy set of aliases for Git. I call it Go Git Aliases (GGA). 
 
-Установка:
+Installation:
 ```
 curl -L https://gogit.ru/alias | bash
 ```
-Затем рестартнуть консоль или
+Then restart your terminal or execute this:
 ```
 . ~/.bashrc
 ```
+If you want to redefine some of this aliases, just add yours lower then `### GGA_END`.
+
+# Features
+
+- Only wrapped in `### GGA_START` and `### GGA_END` chunk of youк `.bashrc` updating. It wont broke anything
+- It always backuping your old `.bashrc`
+- It detects Git version and downgrade to 1.X compatible commands
+- It's just very small and simple to understand
