@@ -1,6 +1,12 @@
 # Go Git алиасы
 
+Скрипт умеет не только устанавливать, но  обновлять алиасы, если они заключены в `### GGA_START` и `### GGA_END`.
+
 Установка:
 ```
-curl -L https://gogit.ru/gitalias >> ~/.bashrc && . ~/.bashrc
+curl -L https://gogit.ru/alias | bash
+```
+Затем рестартнуть консоль или
+```
+. ~/.bashrc
 ```
