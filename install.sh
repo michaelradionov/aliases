@@ -6,8 +6,10 @@ BEGIN_LINE=`grep -n -e '### GGA_START' ~/.bashrc | cut -d : -f 1`
 END_LINE=`grep -n -e '### GGA_END' ~/.bashrc | cut -d : -f 1`
 TAIL_LINES=$(($TOTAL_LINES-$END_LINE + 1))
 D_VIOL='\033[1;34m' # фиолетовый
+L_RED='\033[1;31m' # светло-красный цвет
 NC='\033[0m' # нет цвета
 GIT_VERSION=`git --version | grep -o -E '[0-9]+' | head -1` # Определим верию Git
+
 case $GIT_VERSION in
   1)
     ALIAS_URL='https://gogit.ru/gitalias_1X'
@@ -38,6 +40,7 @@ then
 
       echo 'Самоудаляюсь'
       rm -f ${0##*/}
+      echo -e "Теперь рестартни консоль или выполни ${L_RED}. ~/.bashrc${NC}";
       exit 0;
   #   ;;
   #   *)
@@ -73,6 +76,7 @@ then
       . ~/.bashrc
       echo 'Самоудаляюсь'
       rm -f ${0##*/}
+      echo -e "Теперь рестартни консоль или выполни ${L_RED}. ~/.bashrc${NC}";
       exit 0;
   #   ;;
   #   *)
