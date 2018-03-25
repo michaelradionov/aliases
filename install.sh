@@ -16,7 +16,7 @@ then
   # read -p 'Не нашел маркеры Go Git Aliases: "### GGA_START" и "### GGA_END". Либо блока еще нет, либо сломаны оба маркера. Создадим новый блок с алиасами для Git? (y/n) ' x
   # case $x in
   #   y)
-      echo -e '${D_VIOL}Не нашел маркеры Go Git Aliases: "### GGA_START" и "### GGA_END". Либо блока еще нет, либо сломаны оба маркера. Добавляю новый блок Go Git Алиасов в конец вашего ~/.bashrc...${NC}';
+      echo -e "${D_VIOL}Не нашел маркеры Go Git Aliases: '### GGA_START' и '### GGA_END'. Либо блока еще нет, либо сломаны оба маркера. Добавляю новый блок Go Git Алиасов в конец вашего ~/.bashrc...${NC}";
       echo '### GGA_START'>> ~/.bashrc
       curl -L https://gogit.ru/gitalias >> ~/.bashrc
       echo '### GGA_END'>> ~/.bashrc
@@ -37,7 +37,7 @@ fi
 # Видимо, один из маркеров сломан
 if [[ ! $BEGIN_LINE ]] || [[ ! $END_LINE ]]
 then
-  echo -e '${D_VIOL}Похоже, что один из маркеров GGA сломан. Вам придется это починить самостоятельно. \nДолжно быть "### GGA_START" в начале и "### GGA_END" в конце. Самоудаляюсь.${NC}';
+  echo -e "${D_VIOL}Похоже, что один из маркеров GGA сломан. Вам придется это починить самостоятельно. \nДолжно быть '### GGA_START' в начале и '### GGA_END' в конце. Самоудаляюсь.${NC}";
   rm -f ${0##*/}
   exit 0;
 fi
@@ -48,7 +48,7 @@ then
   # read -p 'Нашел блок Go Git Алиасов. Обновить? (y/n)' x
   # case $x in
   #   y)
-      echo -e '${D_VIOL}Нашел блок Go Git Алиасов. Обновляю${NC}';
+      echo -e "${D_VIOL}Нашел блок Go Git Алиасов. Обновляю${NC}";
       # Заменяем блок
       echo 'Делаю бекап файла ~/.bashrc в ~/.bashrc.backup';
       cp ~/.bashrc ~/.bashrc.backup
