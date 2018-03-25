@@ -1,4 +1,8 @@
-#Git Aliases
+# Git Aliases. Install with:
+#
+# curl -L https://gogit.ru/gitalias >> ~/.bashrc && . ~/.bashrc
+#
+
 alias gs='git status'
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %C(white)%an%C(auto)%d %C(green)%s" --date=short --graph --all' # красивый гит лог ВСЕХ веток. (auto) НЕ РАБОТАЕТ на git 1.X (старее 2 версии), заменить на цвет, например, (red)
 alias gl1='git log --pretty=format:"%C(yellow)%h %Cred%ad %C(white)%an%C(auto)%d %C(green)%s" --date=short --graph' # красивый гит лог ТЕКУЩЕЙ ветки. (auto) НЕ РАБОТАЕТ на git 1.X (старее 2 версии), заменить на цвет, например, (red)
