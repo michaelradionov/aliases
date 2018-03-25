@@ -5,84 +5,65 @@ TOTAL_LINES=`cat ~/.bashrc | wc -l`
 BEGIN_LINE=`grep -n -e '### GGA_START' ~/.bashrc | cut -d : -f 1`
 END_LINE=`grep -n -e '### GGA_END' ~/.bashrc | cut -d : -f 1`
 TAIL_LINES=$(($TOTAL_LINES-$END_LINE + 1))
-D_VIOL='\033[1;34m' # фиолетовый
-L_RED='\033[1;31m' # светло-красный цвет
-NC='\033[0m' # нет цвета
-GIT_VERSION=`git --version | grep -o -E '[0-9]+' | head -1` # Определим верию Git
+D_VIOL='\033[1;34m' # violet
+L_RED='\033[1;31m' # light red
+NC='\033[0m' # no color
+GIT_VERSION=`git --version | grep -o -E '[0-9]+' | head -1` # Git version detection
 
 case $GIT_VERSION in
   1)
     ALIAS_URL='https://gogit.ru/gitalias_1X'
-    echo 'Увас Git 1 версии. Сойдет, хотя рекомендую обновиться'
+    echo 'You have Git 1.X. That is fine but I suggest you to upgrade it'
   ;;
   2)
     ALIAS_URL='https://gogit.ru/gitalias'
-    echo 'У вас Git 2 версии. Отлично!'
+    echo 'You have Git 2.X. Nice!'
   ;;
   *)
-    echo 'Не удалось определить версию Git. Самоудаляюсь'
+    echo 'Can not detect Git version. Self-terminating'
     rm -f ${0##*/}
     exit 0;
   ;;
 esac
 
-# Не могу найти блок GGA
+# Can't find both GGA markers
 if [[ ! $BEGIN_LINE ]] && [[ ! $END_LINE ]]
 then
-  # read -p 'Не нашел маркеры Go Git Aliases: "### GGA_START" и "### GGA_END". Либо блока еще нет, либо сломаны оба маркера. Создадим новый блок с алиасами для Git? (y/n) ' x
-  # case $x in
-  #   y)
-      echo -e "${D_VIOL}Не нашел маркеры Go Git Aliases: '### GGA_START' и '### GGA_END'. Либо блока еще нет, либо сломаны оба маркера. Добавляю новый блок Go Git Алиасов в конец вашего ~/.bashrc...${NC}";
-      echo '### GGA_START'>> ~/.bashrc
-      curl -L -s ${ALIAS_URL} >> ~/.bashrc
-      echo '### GGA_END'>> ~/.bashrc
-      . ~/.bashrc
+  echo -e "${D_VIOL}Can't find GGA markers like: '### GGA_START' и '### GGA_END'. Either it is fresh installation or both markers are broken. I guess you want me to install new GGA block in the end of your ~/.bashrc${NC}";
+  echo "Making backup of your '~/.bashrc' in ~/.bashrc.backup";
+  cp ~/.bashrc ~/.bashrc.backup
+  echo '### GGA_START'>> ~/.bashrc
+  curl -L -s ${ALIAS_URL} >> ~/.bashrc
+  echo '### GGA_END'>> ~/.bashrc
+  . ~/.bashrc
 
-      echo 'Самоудаляюсь'
-      rm -f ${0##*/}
-      echo -e "Теперь рестартни консоль или выполни (да, с точкой в начале) ${L_RED}. ~/.bashrc${NC}";
-      exit 0;
-  #   ;;
-  #   *)
-  #     echo 'Ничего не делаю. Самоудаляюсь';
-  #     rm -f ${0##*/}
-  #     exit 0;
-  #   ;;
-  # esac
+  echo 'Self-terminating'
+  rm -f ${0##*/}
+  echo -e "Now restart your terminal or run this (yes, dot is a command) ${L_RED}. ~/.bashrc${NC}";
+  exit 0;
 fi
 
-# Видимо, один из маркеров сломан
+# One of markers is broken
 if [[ ! $BEGIN_LINE ]] || [[ ! $END_LINE ]]
 then
-  echo -e "${D_VIOL}Похоже, что один из маркеров GGA сломан. Вам придется это починить самостоятельно. \nДолжно быть '### GGA_START' в начале и '### GGA_END' в конце. Самоудаляюсь.${NC}";
+  echo -e "${D_VIOL}It looks like one of two GGA markers is broken. Hmm.. I guess you'll need to fix it yourself.\n You must check that ${L_RED}### GGA_START${NC} is placed in the beginning and ${L_RED}### GGA_END${NC}  in the end of Go Git Aliases block.\n Self-terminating.${NC}";
   rm -f ${0##*/}
   exit 0;
 fi
 
-# Маркеры нашлись, все ОК
+# Allright, found both markers
 if [[ $BEGIN_LINE ]] && [[ $END_LINE ]]
 then
-  # read -p 'Нашел блок Go Git Алиасов. Обновить? (y/n)' x
-  # case $x in
-  #   y)
-      echo -e "${D_VIOL}Нашел блок Go Git Алиасов. Обновляю${NC}";
-      # Заменяем блок
-      echo 'Делаю бекап файла ~/.bashrc в ~/.bashrc.backup';
-      cp ~/.bashrc ~/.bashrc.backup
-      echo 'Обновляю список алиасов'
-      head -n $BEGIN_LINE ~/.bashrc.backup > ~/.bashrc
-      curl -L -s ${ALIAS_URL} >> ~/.bashrc
-      tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
-      . ~/.bashrc
-      echo 'Самоудаляюсь'
-      rm -f ${0##*/}
-      echo -e "Теперь рестартни консоль или выполни (да, с точкой в начале) ${L_RED}. ~/.bashrc${NC}";
-      exit 0;
-  #   ;;
-  #   *)
-  #     echo 'Ну нет так нет. Пока! Самоудаляюсь'
-  #     rm -f ${0##*/}
-  #     exit 0;
-  #   ;;
-  # esac
+  echo -e "${D_VIOL}Found Go Git Aliases block. Updating...${NC}";
+  echo "Making backup of your '~/.bashrc' in ~/.bashrc.backup";
+  cp ~/.bashrc ~/.bashrc.backup
+  echo 'Updating aliases'
+  head -n $BEGIN_LINE ~/.bashrc.backup > ~/.bashrc
+  curl -L -s ${ALIAS_URL} >> ~/.bashrc
+  tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
+  . ~/.bashrc
+  echo 'Self-terminating'
+  rm -f ${0##*/}
+  echo -e "Now restart your terminal or run this (yes, dot is a command) ${L_RED}. ~/.bashrc${NC}";
+  exit 0;
 fi
