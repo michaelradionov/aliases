@@ -7,8 +7,22 @@ END_LINE=`grep -n -e '### GGA_END' ~/.bashrc | cut -d : -f 1`
 TAIL_LINES=$(($TOTAL_LINES-$END_LINE + 1))
 D_VIOL='\033[1;34m' # фиолетовый
 NC='\033[0m' # нет цвета
-
-echo 'Скрипт Go Git Aliases. Первая версия. Git 1.X НЕ ПОДДЕРЖИВАЕТСЯ';
+GIT_VERSION=`git --version | grep -o -E '[0-9]+' | head -1` # Определим верию Git
+case $GIT_VERSION in
+  1)
+    ALIAS_URL='https://gogit.ru/gitalias_1X'
+    echo 'Увас Git 1 версии. Сойдет, хотя рекомендую обновиться'
+  ;;
+  2)
+    ALIAS_URL='https://gogit.ru/gitalias'
+    echo 'У вас Git 2 версии. Отлично!'
+  ;;
+  *)
+    echo 'Не удалось определить версию Git. Самоудаляюсь'
+    rm -f ${0##*/}
+    exit 0;
+  ;;
+esac
 
 # Не могу найти блок GGA
 if [[ ! $BEGIN_LINE ]] && [[ ! $END_LINE ]]
@@ -18,7 +32,7 @@ then
   #   y)
       echo -e "${D_VIOL}Не нашел маркеры Go Git Aliases: '### GGA_START' и '### GGA_END'. Либо блока еще нет, либо сломаны оба маркера. Добавляю новый блок Go Git Алиасов в конец вашего ~/.bashrc...${NC}";
       echo '### GGA_START'>> ~/.bashrc
-      curl -L -s https://gogit.ru/gitalias >> ~/.bashrc
+      curl -L -s ${ALIAS_URL} >> ~/.bashrc
       echo '### GGA_END'>> ~/.bashrc
       . ~/.bashrc
 
@@ -54,7 +68,7 @@ then
       cp ~/.bashrc ~/.bashrc.backup
       echo 'Обновляю список алиасов'
       head -n $BEGIN_LINE ~/.bashrc.backup > ~/.bashrc
-      curl -L -s https://gogit.ru/gitalias >> ~/.bashrc
+      curl -L -s ${ALIAS_URL} >> ~/.bashrc
       tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
       . ~/.bashrc
       echo 'Самоудаляюсь'
