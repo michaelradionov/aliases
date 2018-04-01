@@ -42,6 +42,7 @@ then
   echo -e "Now restart your terminal or run this (yes, dot is a command):"
   echo ""
   echo -e "${L_RED}. ~/.bashrc${NC}";
+  echo ""
   exit 0;
 fi
 
@@ -69,5 +70,6 @@ then
   echo -e "Now restart your terminal or run this (yes, dot is a command):"
   echo ""
   echo -e "${L_RED}. ~/.bashrc${NC}";
+  echo ""
   exit 0;
 fi
