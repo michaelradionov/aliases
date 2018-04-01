@@ -39,7 +39,9 @@ then
 
   echo 'Self-terminating'
   rm -f ${0##*/}
-  echo -e "Now restart your terminal or run this (yes, dot is a command) ${L_RED}. ~/.bashrc${NC}";
+  echo -e "Now restart your terminal or run this (yes, dot is a command):"
+  echo ""
+  echo -e "${L_RED}. ~/.bashrc${NC}";
   exit 0;
 fi
 
@@ -64,6 +66,8 @@ then
   . ~/.bashrc
   echo 'Self-terminating'
   rm -f ${0##*/}
-  echo -e "Now restart your terminal or run this (yes, dot is a command) ${L_RED}. ~/.bashrc${NC}";
+  echo -e "Now restart your terminal or run this (yes, dot is a command):"
+  echo ""
+  echo -e "${L_RED}. ~/.bashrc${NC}";
   exit 0;
 fi
