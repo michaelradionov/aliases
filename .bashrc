@@ -18,3 +18,4 @@ alias gss='git show --stat --pretty=fuller' # удобно посмотреть 
 alias gh1='go HEAD~1' # глянуть предыдущий коммит
 alias ga='git add -v' # подробный git add (с выводом отчета)
 alias gt='git tag --sort version:refname' # Корректный вывод тегов
+alias gcp='git cherry-pick'
