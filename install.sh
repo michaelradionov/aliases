@@ -43,6 +43,7 @@ then
   echo ""
   echo -e "${L_RED}. ~/.bashrc${NC}";
   echo ""
+  source ~/.bashrc;
   exit 0;
 fi
 
@@ -71,5 +72,6 @@ then
   echo ""
   echo -e "${L_RED}. ~/.bashrc${NC}";
   echo ""
+  source ~/.bashrc;
   exit 0;
 fi
