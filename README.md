@@ -2,15 +2,11 @@
 
 # Go Git aliases
 
-Bash script to install and update handy set of aliases for Git. I call it Go Git Aliases (GGA). 
+Bash script to install and update handy set of aliases for Git. I call it Go Git Aliases (GGA).
 
 Installation:
 ```
-curl -L https://gogit.ru/alias | bash
-```
-Then restart your terminal or execute this:
-```
-. ~/.bashrc
+source <(curl -L https://gogit.ru/alias)
 ```
 If you want to redefine some of this aliases, just add yours lower then `### GGA_END`.
 

@@ -35,15 +35,10 @@ then
   echo '### GGA_START'>> ~/.bashrc
   curl -L -s ${ALIAS_URL} >> ~/.bashrc
   echo '### GGA_END'>> ~/.bashrc
-  . ~/.bashrc
-
+  echo 'Sourcing myself';
+  source ~/.bashrc;
   echo 'Self-terminating'
   rm -f ${0##*/}
-  echo -e "Now restart your terminal or run this (yes, dot is a command):"
-  echo ""
-  echo -e "${L_RED}. ~/.bashrc${NC}";
-  echo ""
-  source ~/.bashrc;
   exit 0;
 fi
 
@@ -65,13 +60,9 @@ then
   head -n $BEGIN_LINE ~/.bashrc.backup > ~/.bashrc
   curl -L -s ${ALIAS_URL} >> ~/.bashrc
   tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
-  . ~/.bashrc
+  echo 'Sourcing myself';
+  source ~/.bashrc;
   echo 'Self-terminating'
   rm -f ${0##*/}
-  echo -e "Now restart your terminal or run this (yes, dot is a command):"
-  echo ""
-  echo -e "${L_RED}. ~/.bashrc${NC}";
-  echo ""
-  source ~/.bashrc;
   exit 0;
 fi
