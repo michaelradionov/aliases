@@ -8,7 +8,7 @@ Installation:
 ```
 source <(curl -L https://gogit.ru/alias)
 ```
-If you want to redefine some of this aliases, just add yours lower then `### GGA_END`.
+If you want to redefine some of these aliases, just add yours lower then `### GGA_END`.
 
 # Features
 
