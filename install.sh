@@ -22,7 +22,7 @@ case $GIT_VERSION in
   *)
     echo 'Can not detect Git version. Exiting'
     # rm -f ${0##*/}
-    exit 0;
+    # exit 0;
   ;;
 esac
 
@@ -36,10 +36,10 @@ then
   curl -L -s ${ALIAS_URL} >> ~/.bashrc
   echo '### GGA_END'>> ~/.bashrc
   echo 'Sourcing myself';
-  source ~/.bashrc;
+  . ~/.bashrc;
   # echo 'Self-terminating'
   # rm -f ${0##*/}
-  exit 0;
+  # exit 0;
 fi
 
 # One of markers is broken
@@ -61,8 +61,8 @@ then
   curl -L -s ${ALIAS_URL} >> ~/.bashrc
   tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
   echo 'Sourcing myself';
-  source ~/.bashrc;
+  . ~/.bashrc;
   # echo 'Self-terminating'
   # rm -f ${0##*/}
-  exit 0;
+  # exit 0;
 fi
