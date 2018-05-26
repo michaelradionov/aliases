@@ -20,8 +20,8 @@ case $GIT_VERSION in
     echo 'You have Git 2.X. Nice!'
   ;;
   *)
-    echo 'Can not detect Git version. Self-terminating'
-    rm -f ${0##*/}
+    echo 'Can not detect Git version. Exiting'
+    # rm -f ${0##*/}
     exit 0;
   ;;
 esac
@@ -37,16 +37,16 @@ then
   echo '### GGA_END'>> ~/.bashrc
   echo 'Sourcing myself';
   source ~/.bashrc;
-  echo 'Self-terminating'
-  rm -f ${0##*/}
+  # echo 'Self-terminating'
+  # rm -f ${0##*/}
   exit 0;
 fi
 
 # One of markers is broken
 if [[ ! $BEGIN_LINE ]] || [[ ! $END_LINE ]]
 then
-  echo -e "${D_VIOL}It looks like one of two GGA markers is broken. Hmm.. I guess you'll need to fix it yourself.\n You must check that ${L_RED}### GGA_START${NC} is placed in the beginning and ${L_RED}### GGA_END${NC}  in the end of Go Git Aliases block.\n Self-terminating.${NC}";
-  rm -f ${0##*/}
+  echo -e "${D_VIOL}It looks like one of two GGA markers is broken. Hmm.. I guess you'll need to fix it yourself.\n You must check that ${L_RED}### GGA_START${NC} is placed in the beginning and ${L_RED}### GGA_END${NC}  in the end of Go Git Aliases block.\n${NC}";
+  # rm -f ${0##*/}
   exit 0;
 fi
 
@@ -62,7 +62,7 @@ then
   tail -n $TAIL_LINES ~/.bashrc.backup >> ~/.bashrc
   echo 'Sourcing myself';
   source ~/.bashrc;
-  echo 'Self-terminating'
-  rm -f ${0##*/}
+  # echo 'Self-terminating'
+  # rm -f ${0##*/}
   exit 0;
 fi
