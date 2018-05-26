@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+# set -e
 
 TOTAL_LINES=`cat ~/.bashrc | wc -l`
 BEGIN_LINE=`grep -n -e '### GGA_START' ~/.bashrc | cut -d : -f 1`
