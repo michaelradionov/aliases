@@ -43,11 +43,11 @@ then
 fi
 
 # One of markers is broken
-if [[ ! $BEGIN_LINE ]] || [[ ! $END_LINE ]]
+if [[ ! $BEGIN_LINE ]] && [[ $END_LINE ]] || [[ $BEGIN_LINE ]] && [[ ! $END_LINE ]]
 then
-  echo -e "${D_VIOL}It looks like one of two GGA markers is broken. Hmm.. I guess you'll need to fix it yourself.\n You must check that ${L_RED}### GGA_START${NC} is placed in the beginning and ${L_RED}### GGA_END${NC}  in the end of Go Git Aliases block.\n${NC}";
+  echo -e "It looks like one of two GGA markers is broken. Hmm.. I guess you'll need to fix it yourself.\n You must check that ${L_RED}### GGA_START${NC} is placed in the beginning and ${L_RED}### GGA_END${NC}  in the end of Go Git Aliases block.\n${NC}";
   # rm -f ${0##*/}
-  exit 0;
+  # exit 0;
 fi
 
 # Allright, found both markers
