@@ -1,4 +1,4 @@
-![gl](https://downloader.disk.yandex.ru/preview/d386ffc9f2d68ec9597345b623d3ccad901f113b11e3099d5df416e51845d8ae/inf/fKqInKw3d7bLFOeFnMGnhH_qWadsfvJkfnR4QJrJTpN-hd-bWduFG8V1dYdrappUPH-e7y21XNR_LHqranyoo43Wb2oAeLzb54Dkzlr1r0qr8npumZHI4midPdWhecNq?uid=0&filename=2018-03-25_19-23-32.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
+![gl](https://downloader.disk.yandex.ru/preview/ff8941bba54a0a078ce4812664f9360c0de9ca526d2c575269a928be03807253/5b488a3d/fKqInKw3d7bLFOeFnMGnhBhmK_AVKNp4Ci4TT7Lecj8YBhTQseQsSv8hyqaEqd2AByZpoLrxCAR2a4d5VG7IyEKqbcKenrMjtOOeOUVrtM6r8npumZHI4midPdWhecNq?uid=0&filename=2018-07-13_12-16-27.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
 
 # Go Git aliases
 
