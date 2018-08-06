@@ -19,3 +19,4 @@ alias gh1='go HEAD~1' # глянуть предыдущий коммит
 alias ga='git add -v' # подробный git add (с выводом отчета)
 alias gt='git tag --sort version:refname' # Корректный вывод тегов
 alias gcp='git cherry-pick'
+alias cherrybeast='function _cherrybeast(){ git cherry-pick $(git log --pretty=format:"%h" --grep="$1"  --all --reverse) -Xtheirs; };_cherrybeast'
