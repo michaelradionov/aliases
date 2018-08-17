@@ -11,5 +11,5 @@ eval "$(curl "https://raw.githubusercontent.com/michaelradionov/gg_installer/mas
 
 # Features
 
-- It detects Git version and downgrade to 1.X compatible aliases
+- It detects Git version and downgrade to Git 1.X compatible aliases
 - Installed by [gg_installer](https://github.com/michaelradionov/gg_installer)
