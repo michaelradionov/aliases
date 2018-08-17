@@ -8,7 +8,6 @@ Installation:
 ```
 eval "$(curl "https://raw.githubusercontent.com/michaelradionov/gg_installer/master/gg_installer.sh")" && gg_installer gg_aliases
 ```
-If you want to redefine some of these aliases, just add yours lower then `### GGA_END`.
 
 # Features
 
