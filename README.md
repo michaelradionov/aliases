@@ -8,7 +8,7 @@ Installation (copy and paste WHOLE line):
 ```shell
 eval "$(curl "https://raw.githubusercontent.com/michaelradionov/gg_installer/master/gg_installer.sh")" && gg_installer gg_aliases
 ```
-
+or you can install it through my lovely [BDSM](https://github.com/michaelradionov/bdsm) script!
 # Features
 
 - It detects Git version and downgrade to Git 1.X compatible aliases
