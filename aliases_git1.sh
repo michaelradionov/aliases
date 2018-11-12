@@ -1,5 +1,5 @@
 # Git Aliases
-# https://github.com/michaelradionov/git-alias
+# https://github.com/michaelradionov/aliases
 #
 
 alias gs='git status'

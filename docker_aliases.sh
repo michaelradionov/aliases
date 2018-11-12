@@ -1,4 +1,5 @@
 # Docker aliases
+# https://github.com/michaelradionov/aliases
 alias dps='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Size}}\t{{.RunningFor}}"'
 alias dpss='docker ps --format "table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Mounts}}\t{{.Ports}}"'
 alias din='function _din(){ docker exec -it $1 bash; };_din'
