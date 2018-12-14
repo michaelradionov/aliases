@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Git Aliases
 # https://github.com/michaelradionov/aliases
 #
