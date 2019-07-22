@@ -4,4 +4,4 @@
 
 alias la="ls -alh"
 alias b="m ~/.bashrc"
-alias hosts="~/.ssh/config"
+alias hosts="cat ~/.ssh/config"
