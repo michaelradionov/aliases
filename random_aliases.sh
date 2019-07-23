@@ -5,3 +5,4 @@
 alias la="ls -alh"
 alias b="m ~/.bashrc"
 alias hosts="cat ~/.ssh/config"
+alias dudu="du --max-depth=1 -h | sort -h"
