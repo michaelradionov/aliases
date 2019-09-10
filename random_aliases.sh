@@ -10,4 +10,6 @@ alias dudu="du --max-depth=1 -h | sort -h" # check current folder disk space
 alias passgen='openssl rand -base64 6' # Generate strong password
 alias genpass='passgen' # I just can't remember previous alias :)
 
-alias phpinfo='echo "<?php phpinfo(); ?>" > info.php'
+alias phpinfo='echo "<?php phpinfo(); ?>" > info.php' 
+
+flagclone (){ git clone git@bitbucket.org:flag_studio/$1.git; }
