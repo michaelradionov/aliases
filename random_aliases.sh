@@ -18,3 +18,6 @@ flagclone (){ git clone git@bitbucket.org:flag_studio/$1.git; }
 alias pcs='php-cs-fixer fix . --path-mode=intersection'
 alias pcsdiff='php-cs-fixer fix . --dry-run --diff --path-mode=intersection'
 alias pcsdry='php-cs-fixer fix . --dry-run --verbose --path-mode=intersection'
+
+# Adds datetime stamps to commands in history
+export HISTTIMEFORMAT="%d/%m/%y %T " 
