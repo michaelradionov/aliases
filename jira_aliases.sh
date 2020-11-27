@@ -31,13 +31,34 @@ jinfo (){ curl -s -u $user:$user_pass  $jira_url/browse/$1 | grep "<title>" | se
 # Inspect a bunch of issues in browser. Usage `jpublish v1.0..` to get issues from tag v1.0 to HEAD. You can put commit or branch instead of tag.
 jpublish () {
   issues=`git log --pretty=format:"%C(yellow)%h %Cred%ad %Cblue%an%C(auto)%d %Creset%s" --date=short --graph $1 | perl -ne '{ /([A-Z]+)-(\d+)/ && print "$1-$2, " }' | sort | uniq |sed 's/.\{2\}$//'`;
+
+  url="$jira_url/issues/?jql=$(urlencode "issuekey in ($issues)")"
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    open "$jira_url/issues/?jql=issuekey in ($issues) ";
+    open $url;
   else
-    echo "$jira_url/issues/?jql=issuekey in ($issues) "
+    echo $url
   fi
 
 }
+
+urlencode() {
+    # urlencode <string>
+
+    old_lc_collate=$LC_COLLATE
+    LC_COLLATE=C
+
+    local length="${#1}"
+    for (( i = 0; i < length; i++ )); do
+        local c="${1:$i:1}"
+        case $c in
+            [a-zA-Z0-9.~_-]) printf '%s' "$c" ;;
+            *) printf '%%%02X' "'$c" ;;
+        esac
+    done
+
+    LC_COLLATE=$old_lc_collate
+}
+
 
 # Get Git log with issue titles. Usage `jlog`. Like git log.
 jlog() {
