@@ -33,5 +33,6 @@ dorm (){
 
 # Kubernetes aliases
 
+alias k='kubectl'
 # clean empty replicas
 alias clean_replicas='kubectl delete $(kubectl get all | grep replicaset.apps | grep "0         0         0" | cut -d" " -f 1)'
