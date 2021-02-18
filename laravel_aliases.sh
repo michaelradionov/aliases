@@ -5,6 +5,7 @@
 alias pa='php artisan'
 alias pu='./vendor/bin/phpunit --testdox'
 alias mfs='php artisan migrate:fresh --seed'
+alias dmfs='docker-compose exec app php artisan migrate:fresh --seed'
 
 alias dewpa='docker-compose exec workspace php artisan'
 alias dewmfs='docker-compose exec workspace php artisan migrate:fresh --seed'
