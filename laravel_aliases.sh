@@ -5,10 +5,11 @@
 alias pa='php artisan'
 alias pu='./vendor/bin/phpunit --testdox'
 alias mfs='php artisan migrate:fresh --seed'
+
+alias dpa='docker-compose exec app php artisan'
+alias dpu='docker-compose exec app ./vendor/bin/phpunit --testdox'
 alias dmfs='docker-compose exec app php artisan migrate:fresh --seed'
 
-alias dewpa='docker-compose exec workspace php artisan'
-alias dewmfs='docker-compose exec workspace php artisan migrate:fresh --seed'
 
 # http://calebporzio.com/bash-alias-composer-link-use-local-folders-as-composer-dependancies/
 composer-link() {
