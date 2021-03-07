@@ -8,6 +8,7 @@ alias dinc='function _dinc(){ docker exec -t $1 bash -c "$2"; };_dinc'
 alias dexec="docker exec -it"
 alias dc='docker-compose'
 alias dew='docker-compose exec workspace'
+alias xdebug='./docker/app/xdebug.bash'
 
 # Show DB sizes in container. First argument is container name, second argument is mysql password INSIDE that container
 dbSizesInCont(){
