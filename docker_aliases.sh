@@ -36,6 +36,6 @@ dorm (){
 
 alias k='kubectl'
 alias kuse='kubectl config use-context'
-kget-context='kubectl config get-contexts'
+alias kget-context='kubectl config get-contexts'
 # clean empty replicas
 alias clean_replicas='kubectl delete $(kubectl get all | grep replicaset.apps | grep "0         0         0" | cut -d" " -f 1)'
