@@ -40,5 +40,5 @@ alias kget-context='kubectl config get-contexts'
 # clean empty replicas
 alias clean_replicas='kubectl delete $(kubectl get all | grep replicaset.apps | grep "0         0         0" | cut -d" " -f 1)'
 alias applyenv='kubectl delete cm/app-env-configmap && \
-		 kubectl create configmap app-env-configmap --from-file .env && \
-		 kubectl rollout restart deploy/app'
+                kubectl create configmap app-env-configmap --from-file .env && \
+                kubectl rollout restart deploy/app'
