@@ -6,7 +6,6 @@
 alias gs='git status'
 alias gl='git log --pretty=format:"%C(yellow)%h %Cred%ad %C(white)%an%C(auto)%d %C(green)%s" --date=short --graph --all' # красивый гит лог ВСЕХ веток. (auto) НЕ РАБОТАЕТ на git 1.X (старее 2 версии), заменить на цвет, например, (red)
 alias gl1='git log --pretty=format:"%C(yellow)%h %Cred%ad %C(white)%an%C(auto)%d %C(green)%s" --date=short --graph' # красивый гит лог ТЕКУЩЕЙ ветки. (auto) НЕ РАБОТАЕТ на git 1.X (старее 2 версии), заменить на цвет, например, (red)
-alias go='git checkout' # сменить ветку, чекаутнуться на коммит (для просмотра). go -b branch создаст ветку branch и перейдет на нее
 alias gc='git commit -m' # закоммитить все что в индексе. После этой команды пишем в кавычках текст коммита
 alias gca='git commit -a -m' # закоммитить все измененное, кроме untracked. После этой команды пишем в кавычках текст коммита
 alias gd='git diff -w' # ПОЛЕЗНАЯ команда. дифф только измененного кода. не покажет изменения прав файлов, пустых строк, отступов.
