@@ -7,6 +7,7 @@ alias din='function _din(){ docker exec -it $1 bash; };_din'
 alias dinc='function _dinc(){ docker exec -t $1 bash -c "$2"; };_dinc'
 alias dexec="docker exec -it"
 alias dc='docker-compose'
+alias docker-compose='docker compose'
 alias dew='docker-compose exec workspace'
 alias xdebug='./docker/app/xdebug.bash'
 
