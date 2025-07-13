@@ -15,7 +15,7 @@ alias grh='git reset --hard' # стереть все изменения в WD и
 alias gf='git fetch'
 alias grh1='git reset --hard HEAD~1' # стереть все изменения в WD и индексе + стереть текущий коммит. удобно, когда надо просто стереть последний коммит
 alias gss='git show --stat --pretty=fuller' # удобно посмотреть что в коммите. если не передавать ей хеш коммита, покажет что есть в текущем коммите
-alias gh1='go HEAD~1' # глянуть предыдущий коммит
+alias gh1='gob HEAD~1' # глянуть предыдущий коммит
 alias ga='git add -v' # подробный git add (с выводом отчета)
 alias gt='git tag --sort version:refname' # Корректный вывод тегов
 alias gcp='git cherry-pick'
@@ -23,3 +23,4 @@ alias cherrybeast='function _cherrybeast(){ git cherry-pick $(git log --pretty=f
 alias revertbeast='function _revertbeast(){ git revert $(git log --pretty=format:"%h" --grep="$1") -Xtheirs --no-edit; };_revertbeast'
 alias back='git reset --hard HEAD@{1}'
 alias gbc='git branch -a --contains '
+alias gob='git checkout'
